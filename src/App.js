@@ -4,6 +4,7 @@ import { Router, Route, Switch } from 'react-router-dom'
 import history from './history'
 
 import Main from './components/Main'
+import 'react-bootstrap/dist/react-bootstrap.min.js'
 
 class App extends Component {
   render () {
