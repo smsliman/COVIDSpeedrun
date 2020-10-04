@@ -39,6 +39,8 @@ const Info = ({ setShowInput, setShowInfo }) => {
             <div className={styles.secondaryTitle}>The rules are simple:</div>
           </Col>
         </Row>
+      </Container>
+      <Container className={styles.middleBox}>
         <Row>
           <Col className={styles.colCenter}>
             <div className={styles.ternaryTitle}>
@@ -58,27 +60,30 @@ const Info = ({ setShowInput, setShowInfo }) => {
         <Row>
           <Col className={styles.colCenter}>
             <div className={styles.ternaryTitle}>
-              &#8226;Finally, you have the option to upload a video to verify
-              your time and be placed on a special "Verified" leaderboard.
+              &#8226; You then have the option to upload a video to verify your
+              time and be placed on a special "Verified" leaderboard.
             </div>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col className={styles.colCenter}>
             <div className={styles.ternaryTitle}>
               &#8226;While doing this, you must do your test properly, follow
               the rules of the rec center, and respect all rec center employees.
             </div>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col className={styles.colCenter}>
             <div className={styles.ternaryTitle}>
-              &#8226;Disrepectful behavior or an inconclusive test result will
-              disqualify your time.
+              &#8226;Disrepectful behavior towards staff, failure to complete
+              the test properly, or an inconclusive test result will disqualify
+              your time.
             </div>
           </Col>
         </Row>
+      </Container>
+      <Container>
         <Row>
           <Col className={styles.colCenter}>
             <button

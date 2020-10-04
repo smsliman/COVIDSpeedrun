@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .background {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    </style>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link
@@ -33,6 +47,7 @@
     <title>React App</title>
   </head>
   <body>
+    <canvas class="background"></canvas>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -45,5 +60,15 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <script>
+      window.onload = function () {
+        Particles.init({
+          selector: '.background',
+          connectParticles: true
+        })
+      }
+    </script>
   </body>
 </html>

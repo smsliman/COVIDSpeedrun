@@ -135,9 +135,10 @@
 }
 .bodyText {
   position: relative;
-  left: 40px;
+  left: 30px;
   top: 8px;
   color: #868e96;
+  font-size: 15px;
 }
 .submitButton {
   background-color: #d8ab4c;
@@ -146,4 +147,10 @@
   border-radius: 5px;
   padding: 10px;
   margin-top: 20px;
+}
+.inputBox {
+  background-color: white;
+  border: 5px solid #808080;
+  border-radius: 10px;
+  padding: 20px;
 }

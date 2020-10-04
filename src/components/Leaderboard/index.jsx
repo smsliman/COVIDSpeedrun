@@ -136,42 +136,44 @@ const Leaderboard = params => {
           <Row>
             <Col className={styles.colCenter}>
               {showTable && (
-                <Table striped bordered hover>
-                  <thead>
-                    <tr>
-                      <td>Name</td>
-                      <td>Minutes</td>
-                      <td>Seconds</td>
-                      <td>Milliseconds</td>
-                      <td>Date</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {times.map((value, index) => {
-                      return (
-                        <>
-                          <tr>
-                            <td>
-                              <div>{value[0]}</div>
-                            </td>
-                            <td>
-                              <div>{value[1]}</div>
-                            </td>
-                            <td>
-                              <div>{value[2]}</div>
-                            </td>
-                            <td>
-                              <div>{value[3]}</div>
-                            </td>
-                            <td>
-                              <div>{value[4]}</div>
-                            </td>
-                          </tr>
-                        </>
-                      )
-                    })}
-                  </tbody>
-                </Table>
+                <div className={styles.opaque}>
+                  <Table striped bordered hover>
+                    <thead>
+                      <tr>
+                        <td>Name</td>
+                        <td>Minutes</td>
+                        <td>Seconds</td>
+                        <td>Milliseconds</td>
+                        <td>Date</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {times.map((value, index) => {
+                        return (
+                          <>
+                            <tr>
+                              <td>
+                                <div>{value[0]}</div>
+                              </td>
+                              <td>
+                                <div>{value[1]}</div>
+                              </td>
+                              <td>
+                                <div>{value[2]}</div>
+                              </td>
+                              <td>
+                                <div>{value[3]}</div>
+                              </td>
+                              <td>
+                                <div>{value[4]}</div>
+                              </td>
+                            </tr>
+                          </>
+                        )
+                      })}
+                    </tbody>
+                  </Table>
+                </div>
               )}
             </Col>
           </Row>

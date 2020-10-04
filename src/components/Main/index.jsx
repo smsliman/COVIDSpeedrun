@@ -51,11 +51,11 @@ const Main = () => {
       isNaN(Number(seconds)) ||
       isNaN(Number(milliseconds))
     ) {
-      alert('Invalid Input: times must be number')
+      alert('Invalid Input: times must be numbers')
       return
     }
     if (Number(seconds) == 0 && Number(minutes) == 0) {
-      alert('Please enter a non-zero amount of seconds')
+      alert('Please enter a non-zero amount of seconds or minutes')
       return
     }
 
@@ -107,104 +107,108 @@ const Main = () => {
         </>
       )}
       {showInput && (
-        <Container id='mainContainer'>
-          <Row>
-            <Col className={styles.colCenter}>
-              <div className={styles.titleText}>Enter Your Time Below: </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col className={styles.colCenter}>
-              <InputGroup className={styles.inputField}>
-                <Col>
-                  <FormControl
-                    className={styles.topLineInput1}
-                    onChange={e => setMinutes(e.target.value)}
-                    placeholder='Minutes'
-                    aria-label='Minutes'
-                    aria-describedby='basic-addon1'
-                  />
-                </Col>
-                <Col className={styles.semicolon}>:</Col>
-                <Col className={styles.colCenter}>
-                  <FormControl
-                    className={styles.topLineInput2}
-                    onChange={e => setSeconds(e.target.value)}
-                    placeholder='Seconds'
-                    aria-label='Seconds'
-                    aria-describedby='basic-addon1'
-                  />
-                  <div className={styles.dot}>.</div>
-                </Col>
-                <Col>
-                  <FormControl
-                    className={styles.topLineInput3}
-                    onChange={e => setMilliseconds(e.target.value)}
-                    placeholder='MilliSeconds'
-                    aria-label='Milliseconds'
-                    aria-describedby='basic-addon1'
-                  />
-                  <br />
-                </Col>
-              </InputGroup>
-            </Col>
-          </Row>
-          <Row>
-            <Col className={styles.colCenter}>
-              <InputGroup>
-                <Col className={styles.colCenter}>
-                  <FormControl
-                    className={styles.nameInput}
-                    onChange={e => setName(e.target.value)}
-                    placeholder='Name'
-                    aria-label='Name'
-                    aria-describedby='basic-addon1'
-                  />
-                </Col>
-              </InputGroup>
-            </Col>
-            <Col className={styles.colCenter}>
-              <DatePicker
-                className={styles.datePicker}
-                selected={startDate}
-                onChange={date => setStartDate(date)}
-              />
-            </Col>
-            <Col>
-              <div className={styles.bodyText}>Select your Category:</div>
-            </Col>
-            <Col>
-              <button
-                className={
-                  anyButtonActive ? styles.anyButtonActive : styles.anyButton
-                }
-                onClick={() => handleAnyClick()}
-              >
-                <div>Any-Per-Spit</div>
-              </button>
-            </Col>
-            <Col>
-              <button
-                className={
-                  endButtonActive ? styles.endButtonActive : styles.endButton
-                }
-                onClick={() => handleEndClick()}
-              >
-                <div>End-To-End</div>
-              </button>
-            </Col>
-          </Row>
-          <Row>
-            <Col className={styles.colCenter}>
-              <button
-                className={styles.submitButton}
-                onClick={() => handleSubmit()}
-              >
-                Submit
-              </button>
-            </Col>
-          </Row>
-        </Container>
+        <>
+          <Container id='mainContainer'>
+            <Row>
+              <Col className={styles.colCenter}>
+                <div className={styles.titleText}>Enter Your Time Below: </div>
+              </Col>
+            </Row>
+          </Container>
+          <Container className={styles.inputBox}>
+            <Row>
+              <Col className={styles.colCenter}>
+                <InputGroup className={styles.inputField}>
+                  <Col>
+                    <FormControl
+                      className={styles.topLineInput1}
+                      onChange={e => setMinutes(e.target.value)}
+                      placeholder='Minutes'
+                      aria-label='Minutes'
+                      aria-describedby='basic-addon1'
+                    />
+                  </Col>
+                  <Col className={styles.semicolon}>:</Col>
+                  <Col className={styles.colCenter}>
+                    <FormControl
+                      className={styles.topLineInput2}
+                      onChange={e => setSeconds(e.target.value)}
+                      placeholder='Seconds'
+                      aria-label='Seconds'
+                      aria-describedby='basic-addon1'
+                    />
+                    <div className={styles.dot}>.</div>
+                  </Col>
+                  <Col>
+                    <FormControl
+                      className={styles.topLineInput3}
+                      onChange={e => setMilliseconds(e.target.value)}
+                      placeholder='MilliSeconds'
+                      aria-label='Milliseconds'
+                      aria-describedby='basic-addon1'
+                    />
+                    <br />
+                  </Col>
+                </InputGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col className={styles.colCenter}>
+                <InputGroup>
+                  <Col className={styles.colCenter}>
+                    <FormControl
+                      className={styles.nameInput}
+                      onChange={e => setName(e.target.value)}
+                      placeholder='Name'
+                      aria-label='Name'
+                      aria-describedby='basic-addon1'
+                    />
+                  </Col>
+                </InputGroup>
+              </Col>
+              <Col className={styles.colCenter}>
+                <DatePicker
+                  className={styles.datePicker}
+                  selected={startDate}
+                  onChange={date => setStartDate(date)}
+                />
+              </Col>
+              <Col>
+                <div className={styles.bodyText}>Select your Category:</div>
+              </Col>
+              <Col>
+                <button
+                  className={
+                    anyButtonActive ? styles.anyButtonActive : styles.anyButton
+                  }
+                  onClick={() => handleAnyClick()}
+                >
+                  <div>Any-Per-Spit</div>
+                </button>
+              </Col>
+              <Col>
+                <button
+                  className={
+                    endButtonActive ? styles.endButtonActive : styles.endButton
+                  }
+                  onClick={() => handleEndClick()}
+                >
+                  <div>End-To-End</div>
+                </button>
+              </Col>
+            </Row>
+            <Row>
+              <Col className={styles.colCenter}>
+                <button
+                  className={styles.submitButton}
+                  onClick={() => handleSubmit()}
+                >
+                  Submit
+                </button>
+              </Col>
+            </Row>
+          </Container>
+        </>
       )}
       {showLeaderboard && (
         <Leaderboard

@@ -91,7 +91,9 @@
   padding-bottom: 45px;
 }
 .mainTitle {
+  margin-top: 20px;
   font-size: 45px;
+  margin-bottom: 20px;
 }
 .secondaryTitle {
   font-size: 35px;
@@ -110,4 +112,10 @@
   border-radius: 5px;
   padding: 15px;
   margin-top: 20px;
+}
+.middleBox {
+  background-color: #d8ab4c;
+  border-radius: 10px;
+  padding: 20px;
+  padding-bottom: 30px;
 }
