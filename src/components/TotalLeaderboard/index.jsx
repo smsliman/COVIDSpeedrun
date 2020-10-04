@@ -66,7 +66,7 @@ const TotalLeaderboard = params => {
     <div>
       <Container id='mainContainer'>
         <Row>
-          <Col>
+          <Col className={styles.colCenter}>
             <button
               className={
                 anyButtonActive ? styles.anyButtonActive : styles.anyButton
@@ -76,7 +76,7 @@ const TotalLeaderboard = params => {
               <div>Any-Per-Spit</div>
             </button>
           </Col>
-          <Col>
+          <Col className={styles.colCenter}>
             <button
               className={
                 endButtonActive ? styles.endButtonActive : styles.endButton

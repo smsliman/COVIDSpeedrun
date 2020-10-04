@@ -107,7 +107,7 @@ const Leaderboard = params => {
             </Col>
           </Row>
           <Row>
-            <Col>
+            <Col className={styles.colCenter}>
               <button
                 className={
                   anyButtonActive ? styles.anyButtonActive : styles.anyButton
@@ -117,7 +117,7 @@ const Leaderboard = params => {
                 <div>Any-Per-Spit</div>
               </button>
             </Col>
-            <Col>
+            <Col className={styles.colCenter}>
               <button
                 className={
                   endButtonActive ? styles.endButtonActive : styles.endButton
