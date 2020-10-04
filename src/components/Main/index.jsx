@@ -83,7 +83,7 @@ const Main = () => {
   }
 
   return (
-    <div>
+    <div className={styles.globalFont}>
       {/* <Toast
         onClose={() => setShowToast(false)}
         show={showToast}

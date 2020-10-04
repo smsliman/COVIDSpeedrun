@@ -76,9 +76,9 @@ const Info = ({ setShowInput, setShowInfo }) => {
         <Row>
           <Col className={styles.colCenter}>
             <div className={styles.ternaryTitle}>
-              &#8226;Disrepectful behavior towards staff, failure to complete
-              the test properly, or an inconclusive test result will disqualify
-              your time.
+              &#8226;Disrepecting staff, failing to complete the test properly,
+              or receiving an inconclusive test result will disqualify your
+              time.
             </div>
           </Col>
         </Row>

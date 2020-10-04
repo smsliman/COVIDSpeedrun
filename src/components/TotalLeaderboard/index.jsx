@@ -63,7 +63,7 @@ const TotalLeaderboard = params => {
   }, [database, params, anyButtonActive])
 
   return (
-    <div>
+    <div className={styles.globalFont}>
       <Container id='mainContainer'>
         <Row>
           <Col className={styles.colCenter}>
