@@ -10,3 +10,80 @@
   padding: 20px;
   border-radius: 10px;
 }
+.toast {
+  float: right;
+  display: flex;
+  z-index: 1;
+}
+.anyButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  width: 10vh;
+  background-color: #808080;
+  border: none;
+  // text-align: center;
+  font-family: Avenir;
+  font-size: 10px;
+  font-weight: 400;
+  color: black;
+  padding: 2rem;
+  outline: none !important;
+  outline-offset: none !important;
+  border-radius: 10px;
+}
+.anyButtonActive {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  width: 10vh;
+  background-color: #0076ff;
+  border: none;
+  // text-align: center;
+  font-family: Avenir;
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+  padding: 2rem;
+  outline: none !important;
+  outline-offset: none !important;
+  border-radius: 10px;
+}
+.endButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  width: 10vh;
+  background-color: #808080;
+  border: none;
+  // text-align: center;
+  font-family: Avenir;
+  font-size: 10px;
+  font-weight: 400;
+  color: black;
+  padding: 2rem;
+  outline: none !important;
+  outline-offset: none !important;
+  border-radius: 10px;
+}
+.endButtonActive {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  width: 10vh;
+  background-color: #0076ff;
+  border: none;
+  // text-align: center;
+  font-family: Avenir;
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+  padding: 2rem;
+  outline: none !important;
+  outline-offset: none !important;
+  border-radius: 10px;
+}

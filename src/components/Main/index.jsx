@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
 import InputGroup from 'react-bootstrap/InputGroup'
+import Toast from 'react-bootstrap/Toast'
 
 import firebase from '../../firebase.js'
 
@@ -22,12 +23,26 @@ const Main = () => {
   const [seconds, setSeconds] = useState(0)
   const [milliseconds, setMilliseconds] = useState(0)
   const [name, setName] = useState('')
+  const [showToast, setShowToast] = useState(false)
+  const [totalMillis, setTotalMillis] = useState(0)
 
   const [showInfo, setShowInfo] = useState(true)
   const [showInput, setShowInput] = useState(false)
   const [showLeaderboard, setShowLeaderboard] = useState(false)
 
   const [startDate, setStartDate] = useState(new Date())
+
+  const [anyButtonActive, setAnyButtonActive] = useState(true)
+  const [endButtonActive, setEndButtonActive] = useState(false)
+
+  const handleEndClick = () => {
+    setAnyButtonActive(false)
+    setEndButtonActive(true)
+  }
+  const handleAnyClick = () => {
+    setAnyButtonActive(true)
+    setEndButtonActive(false)
+  }
 
   const handleSubmit = () => {
     if (
@@ -45,6 +60,7 @@ const Main = () => {
 
     var totalSeconds = Number(minutes) * 6 + Number(seconds)
     var finalMillis = Number(totalSeconds) * 1000 + Number(milliseconds)
+    setTotalMillis(finalMillis)
     var timeKey = firebase
       .database()
       .ref('/times')
@@ -52,13 +68,35 @@ const Main = () => {
     firebase
       .database()
       .ref('/times/' + timeKey)
-      .update({ Time: finalMillis, Name: name })
+      .update({
+        Time: finalMillis,
+        Name: name,
+        Date: startDate,
+        AnyPerSpit: anyButtonActive
+      })
+    setShowToast(true)
     setShowInput(false)
     setShowLeaderboard(true)
+    // window.location.href =
+    //   'mailto:user@example.com?subject=Subject&body=message%20goes%20here'
   }
 
   return (
     <div>
+      <Toast
+        onClose={() => setShowToast(false)}
+        show={showToast}
+        delay={5000}
+        autohide
+        className={styles.toast}
+      >
+        <Toast.Header>
+          <img src='holder.js/20x20?text=%20' className='rounded mr-2' alt='' />
+          <strong className='mr-auto'>Success!</strong>
+          <small>now</small>
+        </Toast.Header>
+        <Toast.Body>Your time has been successfully submitted!</Toast.Body>
+      </Toast>
       {showInfo && (
         <>
           <Info
@@ -110,9 +148,36 @@ const Main = () => {
               <Button onClick={() => handleSubmit()}>Submit</Button>
             </Col>
           </Row>
+          <Row>
+            <Col>
+              <button
+                className={
+                  anyButtonActive ? styles.anyButtonActive : styles.anyButton
+                }
+                onClick={() => handleAnyClick()}
+              >
+                <div>Any-Per-Spit</div>
+              </button>
+            </Col>
+            <Col>
+              <button
+                className={
+                  endButtonActive ? styles.endButtonActive : styles.endButton
+                }
+                onClick={() => handleEndClick()}
+              >
+                <div>End-To-End</div>
+              </button>
+            </Col>
+          </Row>
         </Container>
       )}
-      {showLeaderboard && <Leaderboard></Leaderboard>}
+      {showLeaderboard && (
+        <Leaderboard
+          totalMillis={totalMillis}
+          AnyPerSpit={anyButtonActive}
+        ></Leaderboard>
+      )}
     </div>
   )
 }
