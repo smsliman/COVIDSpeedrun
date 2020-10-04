@@ -27,6 +27,7 @@
   outline: none !important;
   outline-offset: none !important;
   border-radius: 10px;
+  border-right: 10px;
 }
 .anyButtonActive {
   display: flex;
@@ -34,7 +35,7 @@
   align-items: center;
   height: 15vh;
   width: 20vh;
-  background-color: #0076ff;
+  background-color: #d8ab4c;
   border: none;
   // text-align: center;
   font-family: Avenir;
@@ -45,6 +46,7 @@
   outline: none !important;
   outline-offset: none !important;
   border-radius: 10px;
+  border-right: 10px;
 }
 .endButton {
   display: flex;
@@ -63,6 +65,7 @@
   outline: none !important;
   outline-offset: none !important;
   border-radius: 10px;
+  border-left: 10px;
 }
 .endButtonActive {
   display: flex;
@@ -70,7 +73,7 @@
   align-items: center;
   height: 15vh;
   width: 20vh;
-  background-color: #0076ff;
+  background-color: #d8ab4c;
   border: none;
   // text-align: center;
   font-family: Avenir;
@@ -81,4 +84,5 @@
   outline: none !important;
   outline-offset: none !important;
   border-radius: 10px;
+  border-left: 10px;
 }
