@@ -48,6 +48,7 @@ const TotalLeaderboard = params => {
               var tempMillis =
                 data.val()['Time'] - 60000 * tempMinutes - 1000 * tempSeconds
               tempTimes.push([
+                count,
                 data.val()['Name'],
                 tempMinutes,
                 tempSeconds,
@@ -101,6 +102,7 @@ const TotalLeaderboard = params => {
                 <Table striped bordered hover>
                   <thead>
                     <tr>
+                      <td>Rank</td>
                       <td>Name</td>
                       <td>Minutes</td>
                       <td>Seconds</td>
@@ -127,6 +129,9 @@ const TotalLeaderboard = params => {
                             </td>
                             <td>
                               <div>{value[4]}</div>
+                            </td>
+                            <td>
+                              <div>{value[5]}</div>
                             </td>
                           </tr>
                         </>
