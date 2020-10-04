@@ -14,6 +14,8 @@ import Leaderboard from '../../components/Leaderboard'
 
 import styles from './main.module.scss'
 
+import DatePicker from 'react-datepicker'
+
 const Main = () => {
   var database = firebase.database()
   const [minutes, setMinutes] = useState(0)
@@ -25,19 +27,32 @@ const Main = () => {
   const [showInput, setShowInput] = useState(false)
   const [showLeaderboard, setShowLeaderboard] = useState(false)
 
+  const [startDate, setStartDate] = useState(new Date())
+
   const handleSubmit = () => {
+    if (
+      isNaN(Number(minutes)) ||
+      isNaN(Number(seconds)) ||
+      isNaN(Number(milliseconds))
+    ) {
+      alert('Invalid Input: times must be number')
+      return
+    }
+    if (Number(seconds) == 0 && Number(minutes) == 0) {
+      alert('Please enter a non-zero amount of seconds')
+      return
+    }
+
     var totalSeconds = Number(minutes) * 6 + Number(seconds)
     var finalMillis = Number(totalSeconds) * 1000 + Number(milliseconds)
     var timeKey = firebase
       .database()
       .ref('/times')
       .push().key
-    var update = {}
-    update['/times/' + timeKey] = finalMillis
     firebase
       .database()
-      .ref()
-      .update(update)
+      .ref('/times/' + timeKey)
+      .update({ Time: finalMillis, Name: name })
     setShowInput(false)
     setShowLeaderboard(true)
   }
@@ -88,6 +103,10 @@ const Main = () => {
                   aria-describedby='basic-addon1'
                 />
               </InputGroup>
+              <DatePicker
+                selected={startDate}
+                onChange={date => setStartDate(date)}
+              />
               <Button onClick={() => handleSubmit()}>Submit</Button>
             </Col>
           </Row>

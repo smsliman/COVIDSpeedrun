@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
 import InputGroup from 'react-bootstrap/InputGroup'
+import Table from 'react-bootstrap/Table'
 
 import firebase from '../../firebase.js'
 
@@ -20,16 +21,21 @@ const Leaderboard = () => {
       var tempTimes = []
       database
         .ref('times')
-        .orderByValue()
+        .orderByChild('Time')
         .on('value', function (snapshot) {
           snapshot.forEach(function (data) {
-            var tempMinutes = Math.floor(data.val() / 60000)
+            var tempMinutes = Math.floor(data.val()['Time'] / 60000)
             var tempSeconds = Math.floor(
-              (data.val() - 60000 * tempMinutes) / 1000
+              (data.val()['Time'] - 60000 * tempMinutes) / 1000
             )
             var tempMillis =
-              data.val() - 60000 * tempMinutes - 1000 * tempSeconds
-            tempTimes.push([data.key, tempMinutes, tempSeconds, tempMillis])
+              data.val()['Time'] - 60000 * tempMinutes - 1000 * tempSeconds
+            tempTimes.push([
+              data.val()['Name'],
+              tempMinutes,
+              tempSeconds,
+              tempMillis
+            ])
           })
           setTimes(tempTimes)
         })
@@ -41,9 +47,17 @@ const Leaderboard = () => {
       <Container id='mainContainer'>
         <Row>
           <Col className={styles.colCenter}>
-            <Col className={styles.colCenter}>
-              {times[1] && (
-                <table>
+            {times[1] && (
+              <Table striped bordered hover>
+                <thead>
+                  <tr>
+                    <td>Name</td>
+                    <td>Minutes</td>
+                    <td>Seconds</td>
+                    <td>Milliseconds</td>
+                  </tr>
+                </thead>
+                <tbody>
                   {times.map((value, index) => {
                     return (
                       <>
@@ -64,9 +78,9 @@ const Leaderboard = () => {
                       </>
                     )
                   })}
-                </table>
-              )}
-            </Col>
+                </tbody>
+              </Table>
+            )}
           </Col>
         </Row>
         <Row>
