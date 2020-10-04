@@ -11,78 +11,74 @@
   border-radius: 10px;
 }
 .anyButton {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5vh;
-  width: 10vh;
+  position: relative;
+  left: 200px;
+  height: 80px;
+  width: 140px;
   background-color: #808080;
   border: none;
   // text-align: center;
   font-family: Avenir;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 400;
   color: black;
-  padding: 2rem;
   outline: none !important;
   outline-offset: none !important;
   border-radius: 10px;
   margin-right: 10px;
+  margin: 30px;
 }
 .anyButtonActive {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5vh;
-  width: 10vh;
+  position: relative;
+  left: 200px;
+  height: 80px;
+  width: 140px;
   background-color: #d8ab4c;
   border: none;
   // text-align: center;
   font-family: Avenir;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 400;
   color: white;
-  padding: 2rem;
   outline: none !important;
   outline-offset: none !important;
   border-radius: 10px;
   margin-right: 10px;
+  margin: 30px;
 }
 .endButton {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5vh;
-  width: 10vh;
+  position: relative;
+  right: 200px;
+  height: 80px;
+  width: 140px;
   background-color: #808080;
   border: none;
   // text-align: center;
   font-family: Avenir;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 400;
   color: black;
-  padding: 2rem;
   outline: none !important;
   outline-offset: none !important;
   border-radius: 10px;
   margin-left: 10px;
+  margin: 30px;
 }
 .endButtonActive {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5vh;
-  width: 10vh;
+  position: relative;
+  right: 200px;
+  height: 80px;
+  width: 140px;
   background-color: #d8ab4c;
   border: none;
   // text-align: center;
   font-family: Avenir;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 400;
   color: white;
-  padding: 2rem;
   outline: none !important;
   outline-offset: none !important;
   border-radius: 10px;
   margin-left: 10px;
+  margin: 30px;
 }
