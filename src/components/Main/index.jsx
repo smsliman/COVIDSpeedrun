@@ -84,7 +84,7 @@ const Main = () => {
 
   return (
     <div>
-      <Toast
+      {/* <Toast
         onClose={() => setShowToast(false)}
         show={showToast}
         delay={5000}
@@ -97,7 +97,7 @@ const Main = () => {
           <small>now</small>
         </Toast.Header>
         <Toast.Body>Your time has been successfully submitted!</Toast.Body>
-      </Toast>
+      </Toast> */}
       {showInfo && (
         <>
           <Info

@@ -129,14 +129,15 @@ const Info = ({ setShowInput, setShowInfo }) => {
         </Row>
         <Row>
           <Col className={styles.colCenter}>
-            <Button
+            <button
+              className={styles.nextButton}
               onClick={() => {
                 setShowInput(true)
                 setShowInfo(false)
               }}
             >
               Next
-            </Button>
+            </button>
           </Col>
         </Row>
       </Container>

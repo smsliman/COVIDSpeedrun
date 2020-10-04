@@ -64,7 +64,7 @@ const Leaderboard = params => {
       database
         .ref('times')
         .orderByChild('Time')
-        .startAt(params['totalMillis'])
+        .endAt(params['totalMillis'])
         .on('value', function (snapshot) {
           snapshot.forEach(function (data) {
             if (data.val()['AnyPerSpit'] == anyButtonActive && count < 11) {
@@ -96,14 +96,19 @@ const Leaderboard = params => {
         <Container id='mainContainer'>
           <Row>
             <Col className={styles.colCenter}>
-              Currently Showing: Times close to yours.
+              <div className={styles.titleText}>
+                Here are some times that were close to yours!
+              </div>
             </Col>
           </Row>
           <Row>
             <Col className={styles.colCenter}>
-              <Button onClick={() => setShowTopTimes(true)}>
-                Click here to see "Top Times" Instead
-              </Button>
+              <button
+                className={styles.topTimesButton}
+                onClick={() => setShowTopTimes(true)}
+              >
+                Click here to see the "Top Times" Instead
+              </button>
             </Col>
           </Row>
           <Row>
