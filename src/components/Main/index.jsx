@@ -14,6 +14,7 @@ import Info from '../../components/Info'
 import Leaderboard from '../../components/Leaderboard'
 
 import styles from './main.module.scss'
+import 'react-datepicker/dist/react-datepicker.css'
 
 import DatePicker from 'react-datepicker'
 
@@ -108,47 +109,70 @@ const Main = () => {
       {showInput && (
         <Container id='mainContainer'>
           <Row>
-            <Col className={styles.colCenter}></Col>
+            <Col className={styles.colCenter}>
+              <div className={styles.titleText}>Enter Your Time Below: </div>
+            </Col>
           </Row>
           <Row>
             <Col className={styles.colCenter}>
               <InputGroup className={styles.inputField}>
-                <FormControl
-                  onChange={e => setMinutes(e.target.value)}
-                  placeholder='Minutes'
-                  aria-label='Minutes'
-                  aria-describedby='basic-addon1'
-                />
-                :
-                <FormControl
-                  onChange={e => setSeconds(e.target.value)}
-                  placeholder='Seconds'
-                  aria-label='Seconds'
-                  aria-describedby='basic-addon1'
-                />
-                .
-                <FormControl
-                  onChange={e => setMilliseconds(e.target.value)}
-                  placeholder='MilliSeconds'
-                  aria-label='Milliseconds'
-                  aria-describedby='basic-addon1'
-                />
-                <br />
-                <FormControl
-                  onChange={e => setName(e.target.value)}
-                  placeholder='Name'
-                  aria-label='Name'
-                  aria-describedby='basic-addon1'
-                />
+                <Col>
+                  <FormControl
+                    className={styles.topLineInput1}
+                    onChange={e => setMinutes(e.target.value)}
+                    placeholder='Minutes'
+                    aria-label='Minutes'
+                    aria-describedby='basic-addon1'
+                  />
+                </Col>
+                <Col className={styles.semicolon}>:</Col>
+                <Col className={styles.colCenter}>
+                  <FormControl
+                    className={styles.topLineInput2}
+                    onChange={e => setSeconds(e.target.value)}
+                    placeholder='Seconds'
+                    aria-label='Seconds'
+                    aria-describedby='basic-addon1'
+                  />
+                  <div className={styles.dot}>.</div>
+                </Col>
+                <Col>
+                  <FormControl
+                    className={styles.topLineInput3}
+                    onChange={e => setMilliseconds(e.target.value)}
+                    placeholder='MilliSeconds'
+                    aria-label='Milliseconds'
+                    aria-describedby='basic-addon1'
+                  />
+                  <br />
+                </Col>
               </InputGroup>
-              <DatePicker
-                selected={startDate}
-                onChange={date => setStartDate(date)}
-              />
-              <Button onClick={() => handleSubmit()}>Submit</Button>
             </Col>
           </Row>
           <Row>
+            <Col className={styles.colCenter}>
+              <InputGroup>
+                <Col className={styles.colCenter}>
+                  <FormControl
+                    className={styles.nameInput}
+                    onChange={e => setName(e.target.value)}
+                    placeholder='Name'
+                    aria-label='Name'
+                    aria-describedby='basic-addon1'
+                  />
+                </Col>
+              </InputGroup>
+            </Col>
+            <Col className={styles.colCenter}>
+              <DatePicker
+                className={styles.datePicker}
+                selected={startDate}
+                onChange={date => setStartDate(date)}
+              />
+            </Col>
+            <Col>
+              <div className={styles.bodyText}>Select your Category:</div>
+            </Col>
             <Col>
               <button
                 className={
@@ -167,6 +191,16 @@ const Main = () => {
                 onClick={() => handleEndClick()}
               >
                 <div>End-To-End</div>
+              </button>
+            </Col>
+          </Row>
+          <Row>
+            <Col className={styles.colCenter}>
+              <button
+                className={styles.submitButton}
+                onClick={() => handleSubmit()}
+              >
+                Submit
               </button>
             </Col>
           </Row>
