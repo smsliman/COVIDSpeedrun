@@ -44,7 +44,7 @@ const Info = ({ setShowInput, setShowInfo }) => {
         <Row>
           <Col className={styles.colCenter}>
             <div className={styles.ternaryTitle}>
-              &#8226;There are two categories, with the details of each listed
+              There are two categories, with the details of each listed
               below.
             </div>
           </Col>
@@ -52,7 +52,7 @@ const Info = ({ setShowInput, setShowInfo }) => {
         <Row>
           <Col className={styles.colCenter}>
             <div className={styles.ternaryTitle}>
-              &#8226;Time yourself according to the rules of one of the
+              &#8226; Time yourself according to the rules of one of the
               categories, then enter your name and time on the next page.
             </div>
           </Col>
@@ -76,7 +76,7 @@ const Info = ({ setShowInput, setShowInfo }) => {
         <Row>
           <Col className={styles.colCenter}>
             <div className={styles.ternaryTitle}>
-              &#8226;Disrepecting staff, failing to complete the test properly,
+              &#8226; Disrepecting staff, failing to complete the test properly,
               or receiving an inconclusive test result will disqualify your
               time.
             </div>
