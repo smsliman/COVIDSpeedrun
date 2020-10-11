@@ -64,7 +64,7 @@ const Leaderboard = params => {
       database
         .ref('times')
         .orderByChild('Time')
-        .endAt(params['totalMillis'])
+        .startAt(params['totalMillis'])
         .on('value', function (snapshot) {
           snapshot.forEach(function (data) {
             if (data.val()['AnyPerSpit'] == anyButtonActive && count < 11) {

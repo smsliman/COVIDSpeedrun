@@ -59,7 +59,7 @@ const Main = () => {
       return
     }
 
-    var totalSeconds = Number(minutes) * 6 + Number(seconds)
+    var totalSeconds = Number(minutes) * 60 + Number(seconds)
     var finalMillis = Number(totalSeconds) * 1000 + Number(milliseconds)
     setTotalMillis(finalMillis)
     var timeKey = firebase
